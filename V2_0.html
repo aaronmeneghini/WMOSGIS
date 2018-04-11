@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+       #map {
+        height: 800px;
+        width: 80%;
+		margin-left: 100px;
+       }
+	   body {
+       background-color: linen;
+		}
+
+		h1 {
+		color: Navy;
+		margin-left: 100px;
+		} 
+		h2 {
+		color: Blue;
+		margin-left: 110px;
+	}
+    </style>
+  </head>
+  <body>
+    <h1>Growing Places Food Map</h1> 
+    <div id="map"></div>
+    <script>
+      function initMap() {
+	  
+	  
+        var mapcenter = {lat: 42.54, lng: -71.79};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 10,
+          center: mapcenter
+        });
+    
+
+        marker.addListener('click', function() {
+          map.setZoom(8);
+          map.setCenter(marker.getPosition());
+        }); 
+      }
+    </script>
+    <script async defer
+    src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyChFsvLbqcDVBUQMFQJaMxA19PhTys6ZxY&callback=initMap">
+    </script>
+  </body>
+</html>
